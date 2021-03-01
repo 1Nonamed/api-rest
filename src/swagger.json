@@ -1,0 +1,220 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Node final API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "description": "Log In",
+        "tags": ["Auth"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "description": "Sign Up",
+        "tags": ["Auth"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "description": "Get all Users",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      },
+      "post": {
+        "description": "Add User",
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    },
+    "/users/userId": {
+      "get": {
+        "description": "Get User by Id",
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "number",
+                "required": ["userId"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      },
+      "put": {
+        "description": "Update User",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete User",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    },
+    "/users/userId/roles/roleId": {
+      "post": {
+        "description": "Add Role to User",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    },
+    "/roles": {
+      "get": {
+        "description": "Get Roles",
+        "tags": ["Roles"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      },
+      "post": {
+        "description": "Add Role",
+        "tags": ["Roles"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    },
+    "/roles/roleId": {
+      "get": {
+        "description": "Get Role by Id",
+        "tags": ["Roles"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      },
+      "put": {
+        "description": "Update Role",
+        "tags": ["Roles"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete Role",
+        "tags": ["Roles"],
+        "responses": {
+          "200": {
+            "description": "Succesful"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Login": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "required": ["firstname", "lastname", "email", "password"],
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "UserId": {
+        "type": "number",
+        "required": ["userId"],
+        "properties": {
+          "userId": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

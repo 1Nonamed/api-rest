@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node src/app.js",
     "start": "node dist/app.js",
-    "build": "babel src --out-dir dist"
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && babel src --out-dir dist --copy-files",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +20,14 @@
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "helmet": "^4.4.1",
+    "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.16",
