@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   ContentActors.init({
-    actorId: DataTypes.INTEGER,
-    contentId: DataTypes.INTEGER
+    actor_id: DataTypes.INTEGER,
+    content_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'ContentActors',
-    tableName: 'content_actors'
+    timestamps: false
   });
   return ContentActors;
 };

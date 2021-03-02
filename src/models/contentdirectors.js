@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   ContentDirectors.init({
-    directorId: DataTypes.INTEGER,
-    contentId: DataTypes.INTEGER
+    director_id: DataTypes.INTEGER,
+    content_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'ContentDirectors',
-    tableName: 'content_directors'
+    timestamps: false
   });
   return ContentDirectors;
 };

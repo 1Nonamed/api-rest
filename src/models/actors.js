@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsToMany(models.Contents, {
         through: "ContentActors",
-        foreignKey: "actorId",
+        foreignKey: "actor_id",
       });
     }
   }
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Actors",
-      tableName: 'actors'
+      timestamps: false
     }
   );
   return Actors;

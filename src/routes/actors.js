@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import {deleteActor, getActors} from "../controllers/actors";
+import {deleteActor, getActors, getActorById} from "../controllers/actors";
 
 const router = Router();
 

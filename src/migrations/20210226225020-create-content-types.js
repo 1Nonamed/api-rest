@@ -4,8 +4,8 @@ module.exports = {
     await queryInterface.createTable("ContentTypes", {
       content_type_id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER,
       },
       name: {

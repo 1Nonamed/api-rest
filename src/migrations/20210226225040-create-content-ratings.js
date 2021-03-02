@@ -4,11 +4,11 @@ module.exports = {
     await queryInterface.createTable("ContentRatings", {
       content_rating_id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
       content_type_id: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: "ContentTypes",

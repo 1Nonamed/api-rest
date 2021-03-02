@@ -12,13 +12,13 @@ module.exports = {
         type: Sequelize.STRING,
       },
       description: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       total_seasons: {
         type: Sequelize.INTEGER,
       },
       imdb_score: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL,
       },
       release_dates: {
         type: Sequelize.STRING,
@@ -28,12 +28,20 @@ module.exports = {
       },
       content_rating: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "ContentRatings",
+          key: "content_rating_id",
+        },
       },
       total_episodes: {
         type: Sequelize.INTEGER,
       },
       content_type: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "ContentTypes",
+          key: "content_type_id",
+        },
       },
       imdb_link: {
         type: Sequelize.STRING,
@@ -42,7 +50,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
       imdb_score_votes: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL,
       },
       rating_details: {
         type: Sequelize.JSON,

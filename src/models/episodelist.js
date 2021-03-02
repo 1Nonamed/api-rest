@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class EpisodeList extends Model {
     /**
@@ -12,21 +10,24 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  EpisodeList.init({
-    seasonNum: DataTypes.INTEGER,
-    episodeName: DataTypes.STRING,
-    contentId: DataTypes.INTEGER,
-    releaseDate: DataTypes.STRING,
-    episodeRating: DataTypes.INTEGER,
-    episodeNum: DataTypes.INTEGER,
-    description: DataTypes.STRING,
-    episodeImdbLink: DataTypes.STRING,
-    episodeScoreVotes: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'EpisodeList',
-    tableName: 'episode_list'
-  });
+  }
+  EpisodeList.init(
+    {
+      season_num: DataTypes.INTEGER,
+      episode_name: DataTypes.STRING,
+      content_id: DataTypes.INTEGER,
+      release_date: DataTypes.STRING,
+      episode_rating: DataTypes.DECIMAL,
+      episode_num: DataTypes.INTEGER,
+      description: DataTypes.TEXT,
+      episode_imdb_link: DataTypes.STRING,
+      episode_score_votes: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "EpisodeLists",
+      timestamps: false,
+    }
+  );
   return EpisodeList;
 };

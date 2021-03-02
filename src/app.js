@@ -11,6 +11,7 @@ import swaggerDocument from "./swagger.json";
 import authRoutes from "./routes/auth";
 import roleRoutes from "./routes/roles";
 import userRoutes from "./routes/users";
+import actorRoutes from "./routes/actors";
 
 config();
 const app = express();
@@ -27,6 +28,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/roles", roleRoutes);
+app.use("/api/v1/actors", actorRoutes);
 
 app.get("/", (req, res) => {
   res.send({
